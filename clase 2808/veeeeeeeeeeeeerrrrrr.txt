@@ -1,0 +1,6 @@
+Select * FROM Bugs B, Producto P
+WHERE B.idproducto= P.idproducto
+
+Propiedades especiales de Combo
+DisplayMember: dato que muestro (nombre de probincia)
+Valor que esconde el combo: Vlaue mamber (codigo provincia)
