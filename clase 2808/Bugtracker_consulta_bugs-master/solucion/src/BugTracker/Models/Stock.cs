@@ -8,19 +8,19 @@ namespace BugTracker.Models
 {
     class Stock
     {
-        int codProducto;
-        int cantActual;
-        int catnMin;
+        private int codProducto;
+        private int cantActual;
+        private int cantMin;
 
         public Stock()
         {
         }
 
-        public Stock(int codProducto, int cantActual, int catnMin)
+        public Stock(int codProducto, int cantActual, int cantMin)
         {
             this.codProducto = codProducto;
             this.cantActual = cantActual;
-            this.catnMin = catnMin;
+            this.cantMin = cantMin;
         }
 
 
@@ -32,6 +32,11 @@ namespace BugTracker.Models
         public int getCodProducto()
         {
             return codProducto;
+        }
+
+        public int getCantMin()
+        {
+            return cantMin;
         }
     }
 }

@@ -21,24 +21,20 @@ namespace BugTracker.Controllers
             {
                 int codProd = int.Parse(row["codProducto"].ToString());
                 int cantActual = int.Parse(row["cantActual"].ToString());
-                float cantMin = float.Parse(row["cantMin"].ToString());
+                int cantMin = int.Parse(row["cantMin"].ToString());
+
+                Stock s = new Stock(codProd, cantActual, cantMin);
+                stock.Add(s);
+
             }
         }
 
-        
-        //public int consultarStockActualDelProducto(int codProd)
-        //{
-        //    Stock stockProd = null;
 
-        //    foreach(Stock s in stock)
-        //    {
-        //        if(s.getCodProducto() == codProd)
-        //        {
-        //            stockProd = s;
-        //        }
-        //    }
-        //    return stockProd.cantidadDelProducto();
+        public int consultarStockActualDelProducto(Producto p)
+        {
+            Stock stockProd = stock.ElementAt(p.getIdProducto()-1);
+            return stockProd.cantidadDelProducto();
 
-        //}
+        }
     }
 }

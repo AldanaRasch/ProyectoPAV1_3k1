@@ -1,4 +1,4 @@
-﻿namespace BugTracker
+﻿namespace BugTracker.Views
 {
     partial class frmLogin
     {

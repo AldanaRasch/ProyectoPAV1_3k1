@@ -12,7 +12,7 @@ namespace BugTracker
 
         private DBHelper()
         {
-            string_conexion = @"Data Source=DESKTOP-JT36S5Q;Initial Catalog=ProyectoGranEsquina;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string_conexion = @"Data Source=OFICINA3\SQLEXPRESS;Initial Catalog=ProyectoGranEsquina;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         }
 
         public static DBHelper GetDBHelper()

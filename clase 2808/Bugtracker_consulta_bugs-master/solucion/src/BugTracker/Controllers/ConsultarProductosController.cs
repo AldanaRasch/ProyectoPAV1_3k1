@@ -10,7 +10,7 @@ namespace BugTracker.Controllers
 {
     class ConsultarProductosController
     {
-        private List<Producto> productos;
+        private List<Producto> productos = new List<Producto>();
         DBHelper dbContext = DBHelper.GetDBHelper();
         private ConsultarCategoriasController ccc = new ConsultarCategoriasController();
 
@@ -26,6 +26,8 @@ namespace BugTracker.Controllers
                 string nombre = row["nombre"].ToString();
                 Categoria categoria = ccc.obtenerCategoria(int.Parse(row["id_categoria"].ToString()));
                 float precioVta = float.Parse(row["precioVenta"].ToString());
+                productos.Add(prod);
+
             }
         }
     }

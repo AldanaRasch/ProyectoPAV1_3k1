@@ -10,7 +10,7 @@ namespace BugTracker.Controllers
 {
     class ConsultarCategoriasController
     {
-        List<Categoria> categorias;
+        List<Categoria> categorias = new List<Categoria>();
         DBHelper dbContext = DBHelper.GetDBHelper();
 
         public ConsultarCategoriasController()
@@ -23,6 +23,7 @@ namespace BugTracker.Controllers
                 string nombre = row["nombre"].ToString();
 
                 Categoria prod = new Categoria(idCateg, nombre);
+                categorias.Add(prod);
             }
 
         }
@@ -31,6 +32,11 @@ namespace BugTracker.Controllers
         {
             Categoria cat = categorias.ElementAt(index + 1);
             return cat;
+        }
+
+        public List<Categoria> obtenerListCategorias()
+        {
+            return categorias;
         }
     }
 }

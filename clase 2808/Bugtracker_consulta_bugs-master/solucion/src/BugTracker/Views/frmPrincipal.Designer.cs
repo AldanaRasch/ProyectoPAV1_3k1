@@ -1,4 +1,4 @@
-﻿namespace BugTracker
+﻿namespace BugTracker.Views
 {
     partial class frmPrincipal
     {
@@ -33,6 +33,7 @@
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarBugsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemConsultarStock = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +59,7 @@
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consultarBugsToolStripMenuItem,
+            this.itemConsultarStock,
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
@@ -66,16 +68,23 @@
             // consultarBugsToolStripMenuItem
             // 
             this.consultarBugsToolStripMenuItem.Name = "consultarBugsToolStripMenuItem";
-            this.consultarBugsToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.consultarBugsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultarBugsToolStripMenuItem.Text = "Consultar Bugs";
             this.consultarBugsToolStripMenuItem.Click += new System.EventHandler(this.consultarBugsToolStripMenuItem_Click_1);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click_1);
+            // 
+            // itemConsultarStock
+            // 
+            this.itemConsultarStock.Name = "itemConsultarStock";
+            this.itemConsultarStock.Size = new System.Drawing.Size(180, 22);
+            this.itemConsultarStock.Text = "Consultar Stock";
+            this.itemConsultarStock.Click += new System.EventHandler(this.ItemConsultarStock_Click);
             // 
             // frmPrincipal
             // 
@@ -102,7 +111,6 @@
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarBugsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-
-
+        private System.Windows.Forms.ToolStripMenuItem itemConsultarStock;
     }
 }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BugTracker
+namespace BugTracker.Views
 {
     public partial class frmPrincipal : Form
     {
@@ -43,6 +43,10 @@ namespace BugTracker
             frmDetalle.ShowDialog();
         }
 
-
+        private void ItemConsultarStock_Click(object sender, EventArgs e)
+        {
+            frmConsultaStock frmStock = new frmConsultaStock();
+            frmStock.ShowDialog();
+        }
     }
 }
