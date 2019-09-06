@@ -8,7 +8,28 @@ namespace BugTracker.Models
 {
     class Categoria
     {
-        int idCategoria { get; set; }
-        string nombre { get; set; }
+        int idCategoria;
+        string nombre;
+
+        public Categoria(int idCategoria, string nombre)
+        {
+            this.idCategoria = idCategoria;
+            this.nombre = nombre;
+        }
+
+        public int getIdCategoria()
+        {
+            return idCategoria;
+        }
+
+        public string getNombre()
+        {
+            return nombre;
+        }
+
+        public void setNombre(string nom)
+        {
+            nombre = nom;
+        }
     }
 }

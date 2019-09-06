@@ -47,7 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ConsultarCantidadProductosPorCategoria.cs" />
+    <Compile Include="Controllers\ConsultarCategoriasController.cs" />
+    <Compile Include="Controllers\ConsultarProductosConStockCritico.cs" />
+    <Compile Include="Controllers\ConsultarProductosController.cs" />
+    <Compile Include="Controllers\ConsultarStockController.cs" />
     <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Models\Stock.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\DBHelper.cs" />
     <Compile Include="Views\frmConsultaBugs.cs">
@@ -55,12 +61,6 @@
     </Compile>
     <Compile Include="Views\frmConsultaBugs.designer.cs">
       <DependentUpon>frmConsultaBugs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\frmConsultaStockCritico.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\frmConsultaStockCritico.Designer.cs">
-      <DependentUpon>frmConsultaStockCritico.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\frmLogin.cs">
       <SubType>Form</SubType>
@@ -78,9 +78,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Views\frmConsultaBugs.resx">
       <DependentUpon>frmConsultaBugs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmConsultaStockCritico.resx">
-      <DependentUpon>frmConsultaStockCritico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
