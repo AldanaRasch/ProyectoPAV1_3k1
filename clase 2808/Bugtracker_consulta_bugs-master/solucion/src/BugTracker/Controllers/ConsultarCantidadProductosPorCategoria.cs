@@ -14,15 +14,12 @@ namespace BugTracker.Controllers
         List<Stock> stock = new List<Stock>();
         //ATRIBUTOS
         DBHelper dbContext = DBHelper.GetDBHelper();
-
+      
         //METODOS
         public ConsultarCantidadProductosPorCategoria()
         {
             DataTable tablaProducto = dbContext.ConsultaSQL(
                 "select * from Productos");
-
-            DataTable tablaCategoria = dbContext.ConsultaSQL(
-                "select * from Categorias");
 
             DataTable tablaStock = dbContext.ConsultaSQL(
                 "select * from Stock");
@@ -33,32 +30,48 @@ namespace BugTracker.Controllers
                 string nomProd = row["nombre"].ToString();
                 int id_categ_prod = int.Parse(row["id_categoria"].ToString());
                 float precioVenta = float.Parse(row["Stock"].ToString());
+
+                ConsultarCategoriasController ccc = new ConsultarCategoriasController();
+
+                Categoria categoria = ccc.obtenerCategoria(id_categ_prod);
+
+                Producto nuevoProd = new Producto(idProd, nomProd, categoria, precioVenta);
             }
 
-            //foreach (DataRow row in tablaCategoria.Rows)
-            //{
-            //    id_categoria = int.Parse(row["id_producto"].ToString());
-            //    nomProd = row["nombre"].ToString();
-            //    id_categ_prod = int.Parse(row["id_categoria"].ToString());
-            //    precioVenta = int.Parse(row["Stock"].ToString());
-            //}
+            foreach(DataRow row in tablaStock.Rows)
+            {
+                int codProd = int.Parse(row["codProducto"].ToString());
+                int cantActual = int.Parse(row["cantActual"].ToString());
+                int cantMin = int.Parse(row["cantMin"].ToString());
+
+                Stock nuevoStock = new Stock(codProd,cantActual,cantMin);
+            }
 
         }
 
-
-
-        public int stockProducto(int codProducto)
+        public List<Producto> getProductos()
         {
-            Producto p = new Producto();
-            p = productos.ElementAt(codProducto-1);
-
-            ConsultarStockController csc = new ConsultarStockController();
-
-            int stockActual = csc.consultarStockActualDelProducto(p);
-
-            return stockActual;
-
+            return productos;
         }
+
+        public List<Stock> getStock()
+        {
+            return stock;
+        }
+
+
+        //public int stockProducto(int codProducto)
+        //{
+        //    Producto p = new Producto();
+        //    p = productos.ElementAt(codProducto-1);
+
+        //    ConsultarStockController csc = new ConsultarStockController();
+
+        //    int stockActual = csc.consultarStockActualDelProducto(p);
+
+        //    return stockActual;
+
+        //}
 
 
 
