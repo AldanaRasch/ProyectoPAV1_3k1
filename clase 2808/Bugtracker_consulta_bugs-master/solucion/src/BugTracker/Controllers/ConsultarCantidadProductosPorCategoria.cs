@@ -19,7 +19,7 @@ namespace BugTracker.Controllers
         public ConsultarCantidadProductosPorCategoria()
         {
             DataTable tablaProducto = dbContext.ConsultaSQL(
-                "select * from Productos");
+                "SELECT * FROM Productos");
 
             DataTable tablaStock = dbContext.ConsultaSQL(
                 "select * from Stock");
@@ -29,13 +29,14 @@ namespace BugTracker.Controllers
                 int idProd = int.Parse(row["id_producto"].ToString());
                 string nomProd = row["nombre"].ToString();
                 int id_categ_prod = int.Parse(row["id_categoria"].ToString());
-                float precioVenta = float.Parse(row["Stock"].ToString());
+                float precioVenta = float.Parse(row["precioVenta"].ToString());
 
                 ConsultarCategoriasController ccc = new ConsultarCategoriasController();
 
                 Categoria categoria = ccc.obtenerCategoria(id_categ_prod);
 
                 Producto nuevoProd = new Producto(idProd, nomProd, categoria, precioVenta);
+                productos.Add(nuevoProd);
             }
 
             foreach(DataRow row in tablaStock.Rows)
@@ -45,6 +46,7 @@ namespace BugTracker.Controllers
                 int cantMin = int.Parse(row["cantMin"].ToString());
 
                 Stock nuevoStock = new Stock(codProd,cantActual,cantMin);
+                stock.Add(nuevoStock);
             }
 
         }

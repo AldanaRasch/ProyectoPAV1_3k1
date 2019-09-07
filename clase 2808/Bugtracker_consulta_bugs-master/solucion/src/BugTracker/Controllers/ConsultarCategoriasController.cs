@@ -15,7 +15,7 @@ namespace BugTracker.Controllers
 
         public ConsultarCategoriasController()
         {
-            DataTable tablaProducto = dbContext.ConsultaSQL("select * from Categorias");
+            DataTable tablaProducto = dbContext.ConsultaSQL("SELECT * FROM Categorias");
 
             foreach (DataRow row in tablaProducto.Rows)
             {       
@@ -30,7 +30,7 @@ namespace BugTracker.Controllers
 
         public Categoria obtenerCategoria(int index)
         {
-            Categoria cat = categorias.ElementAt(index + 1);
+            Categoria cat = categorias.ElementAt(index - 1);
             return cat;
         }
 

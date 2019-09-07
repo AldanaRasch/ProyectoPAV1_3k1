@@ -26,30 +26,6 @@ namespace BugTracker.Views
         }
 
 
-        private void cargarComboBox()
-        {
-            ConsultarCategoriasController ccc = new ConsultarCategoriasController();
-            List<Categoria> categorias = ccc.obtenerListCategorias();
-           
-            foreach(Categoria cat in categorias)
-            {
-                listCategoria.Items.Add(cat.getNombre());
-            }
-        }
-
-        public void cargarTabla()
-        {
-            ConsultarCantidadProductosPorCategoria ccpg = new ConsultarCantidadProductosPorCategoria();
-
-            List<Producto> productos = ccpg.getProductos();
-            List<Stock> stock = ccpg.getStock();
-            for(int i=0; i<productos.Count; i++)
-            {
-                
-                
-            }
-
-        }
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -76,6 +52,7 @@ namespace BugTracker.Views
             this.listCategoria.Size = new System.Drawing.Size(121, 21);
             this.listCategoria.TabIndex = 0;
             this.listCategoria.Text = "Seleccione";
+            this.listCategoria.SelectedIndexChanged += new System.EventHandler(this.listCategoria_SelectedIndexChanged);
             // 
             // lblCategoria
             // 

@@ -12,7 +12,11 @@ namespace BugTracker
 
         private DBHelper()
         {
-            string_conexion = @"Data Source=DESKTOP-JT36S5Q;Initial Catalog=ProyectoGranEsquina;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+                //Aldi
+            string_conexion = @"Data Source=DESKTOP-PP344HH;Initial Catalog=ProyectoGranEsquina;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
+                
+                //Eze
+            //string_conexion = @"Data Source=DESKTOP-JT36S5Q;Initial Catalog=ProyectoGranEsquina;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         }
 
         public static DBHelper GetDBHelper()

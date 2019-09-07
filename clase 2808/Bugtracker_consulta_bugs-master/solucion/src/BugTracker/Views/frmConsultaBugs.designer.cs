@@ -218,6 +218,7 @@
             this.dgvBugs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBugs.Size = new System.Drawing.Size(561, 265);
             this.dgvBugs.TabIndex = 6;
+            this.dgvBugs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBugs_CellContentClick);
             // 
             // frmConsultaBugs
             // 
