@@ -57,12 +57,11 @@ namespace BugTracker.DataAccessLayer
             Usuario oUsuario = new Usuario
             {
                 IdUsuario = Convert.ToInt32(row["id_usuario"].ToString()),
-                //IdPerfil = Convert.ToInt32(row["id_perfil"].ToString()),
+                IdPerfil = Convert.ToInt32(row["id_perfil"].ToString()),
                 NombreUsuario = row["usuario"].ToString(),
                 Password = row.Table.Columns.Contains("password") ? row["password"].ToString() : null,
                 Email = row["email"].ToString(),
-                //Estado = row["estado"].ToString()
-                
+                Estado = Convert.ToInt32(row["estado"].ToString())
             };
 
             return oUsuario;
