@@ -52,46 +52,70 @@
     <Compile Include="Controllers\ConsultarProductosConStockCritico.cs" />
     <Compile Include="Controllers\ConsultarProductosController.cs" />
     <Compile Include="Controllers\ConsultarStockController.cs" />
-    <Compile Include="Models\Categoria.cs" />
-    <Compile Include="Models\Stock.cs" />
-    <Compile Include="Models\Producto.cs" />
-    <Compile Include="Models\DBHelper.cs" />
-    <Compile Include="Views\frmConsultaBugs.cs">
+    <Compile Include="DataAccessLayer\BugDao.cs" />
+    <Compile Include="DataAccessLayer\BugHistoricoDao.cs" />
+    <Compile Include="DataAccessLayer\CategoriaDao.cs" />
+    <Compile Include="DataAccessLayer\CompraDao.cs" />
+    <Compile Include="DataAccessLayer\DetalleCompraDao.cs" />
+    <Compile Include="DataAccessLayer\DetalleVentaDao.cs" />
+    <Compile Include="DataAccessLayer\EmpleadoDao.cs" />
+    <Compile Include="DataAccessLayer\EstadoDao.cs" />
+    <Compile Include="DataAccessLayer\ProductoDao.cs" />
+    <Compile Include="DataAccessLayer\ProveedorDao.cs" />
+    <Compile Include="DataAccessLayer\StockDao.cs" />
+    <Compile Include="DataAccessLayer\UsuarioDao.cs" />
+    <Compile Include="DataAccessLayer\VentaDao.cs" />
+    <Compile Include="Entities\Bug.cs" />
+    <Compile Include="Entities\BugHistorico.cs" />
+    <Compile Include="Entities\Categoria.cs" />
+    <Compile Include="Entities\DetalleCompra.cs" />
+    <Compile Include="Entities\Compra.cs" />
+    <Compile Include="Entities\Empleado.cs" />
+    <Compile Include="Entities\Estado.cs" />
+    <Compile Include="Entities\Perfil.cs" />
+    <Compile Include="Entities\Proveedor.cs" />
+    <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Entities\Venta.cs" />
+    <Compile Include="Entities\DetalleVenta.cs" />
+    <Compile Include="Entities\Stock.cs" />
+    <Compile Include="Entities\Producto.cs" />
+    <Compile Include="DataAccessLayer\DBHelper.cs" />
+    <Compile Include="GUILayer\frmConsultaBugs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\frmConsultaBugs.designer.cs">
+    <Compile Include="GUILayer\frmConsultaBugs.designer.cs">
       <DependentUpon>frmConsultaBugs.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmConsultaStock.cs">
+    <Compile Include="GUILayer\frmConsultaStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\frmConsultaStock.Designer.cs">
+    <Compile Include="GUILayer\frmConsultaStock.Designer.cs">
       <DependentUpon>frmConsultaStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmLogin.cs">
+    <Compile Include="GUILayer\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\frmLogin.Designer.cs">
+    <Compile Include="GUILayer\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmPrincipal.cs">
+    <Compile Include="GUILayer\frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\frmPrincipal.Designer.cs">
+    <Compile Include="GUILayer\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Views\frmConsultaBugs.resx">
+    <EmbeddedResource Include="GUILayer\frmConsultaBugs.resx">
       <DependentUpon>frmConsultaBugs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmConsultaStock.resx">
+    <EmbeddedResource Include="GUILayer\frmConsultaStock.resx">
       <DependentUpon>frmConsultaStock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmLogin.resx">
+    <EmbeddedResource Include="GUILayer\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmPrincipal.resx">
+    <EmbeddedResource Include="GUILayer\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -131,6 +155,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -27,10 +27,45 @@ namespace BugTracker.DataAccessLayer
 
             //foreach (DataRow row in resultadoConsulta.Rows)
             //{
-            //    listadoBugs.Add(MappingBug(row);
+            //    listadoBugs.Add(MappingBug(row)
             //}
 
             return listadoBugs;
+        }
+
+        public Usuario GetUser(string pUsuario)
+        {
+            //Construimos la consulta sql para buscar el usuario en la base de datos.
+            String consultaSql = string.Concat(" SELECT id_usuario, id_perfil, usuario, password, email, estado",
+                                               "   FROM Usuarios ",
+                                               "  WHERE borrado=0 and usuario =  '", pUsuario, "'");
+
+            //Usando el método GetDBHelper obtenemos la instancia unica de DBHelper (Patrón Singleton) y ejecutamos el método ConsultaSQL()
+            var resultado = DBHelper.GetDBHelper().ConsultaSQL(consultaSql);
+
+            // Validamos que el resultado tenga al menos una fila.
+            if (resultado.Rows.Count > 0)
+            {
+                return MappingBug(resultado.Rows[0]);
+            }
+
+            return null;
+        }
+
+        private Usuario MappingBug(DataRow row)
+        {
+            Usuario oUsuario = new Usuario
+            {
+                IdUsuario = Convert.ToInt32(row["id_usuario"].ToString()),
+                //IdPerfil = Convert.ToInt32(row["id_perfil"].ToString()),
+                NombreUsuario = row["usuario"].ToString(),
+                Password = row.Table.Columns.Contains("password") ? row["password"].ToString() : null,
+                Email = row["email"].ToString(),
+                //Estado = row["estado"].ToString()
+                
+            };
+
+            return oUsuario;
         }
     }
 }
