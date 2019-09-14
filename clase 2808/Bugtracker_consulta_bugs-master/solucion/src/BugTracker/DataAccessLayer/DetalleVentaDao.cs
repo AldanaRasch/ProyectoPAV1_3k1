@@ -8,5 +8,6 @@ namespace BugTracker.DataAccessLayer
 {
     class DetalleVentaDao
     {
+        
     }
 }

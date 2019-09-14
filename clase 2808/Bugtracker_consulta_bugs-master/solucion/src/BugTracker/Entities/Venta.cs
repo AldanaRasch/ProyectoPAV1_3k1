@@ -8,5 +8,12 @@ namespace BugTracker.Entities
 {
     class Venta
     {
+        public int NroComprobante { get; set; }
+        public DateTime Fecha { get; set; }
+        public int Empleado { get; set; }
+        public override string ToString()
+        {
+            return "NroComprobante" + NroComprobante + "Fecha" + Fecha + "Empleado" + Empleado;
+        }
     }
 }
