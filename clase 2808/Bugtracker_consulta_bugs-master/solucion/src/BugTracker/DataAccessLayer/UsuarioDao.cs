@@ -25,10 +25,10 @@ namespace BugTracker.DataAccessLayer
 
             var resultadoConsulta = DBHelper.GetDBHelper().ConsultaSQL(strSql);
 
-            //foreach (DataRow row in resultadoConsulta.Rows)
-            //{
-            //    listadoBugs.Add(MappingBug(row)
-            //}
+            foreach (DataRow row in resultadoConsulta.Rows)
+            {
+                listadoBugs.Add(MappingBug(row));
+            }
 
             return listadoBugs;
         }

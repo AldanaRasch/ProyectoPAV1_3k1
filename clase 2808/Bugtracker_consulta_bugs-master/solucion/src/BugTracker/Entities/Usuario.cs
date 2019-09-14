@@ -17,7 +17,7 @@ namespace BugTracker.Entities
 
         public override string ToString()
         {
-            return NombreUsuario;
+            return "IdUsuario" + IdUsuario + "IdPerfil" + IdPerfil + "NombreUsuario" + NombreUsuario + "Password" + Password;
         }
     }
 }
