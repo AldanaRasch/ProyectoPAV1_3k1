@@ -8,28 +8,32 @@ namespace BugTracker.Entities
 {
     class Categoria
     {
-        int idCategoria;
-        string nombre;
+        public int IdCategoria { get; set; }
+        public string Nombre { get; set; }
 
+        public Categoria()
+        {
+
+        }
         public Categoria(int idCategoria, string nombre)
         {
-            this.idCategoria = idCategoria;
-            this.nombre = nombre;
+            this.IdCategoria = idCategoria;
+            this.Nombre = nombre;
         }
 
         public int getIdCategoria()
         {
-            return idCategoria;
+            return IdCategoria;
         }
 
         public string getNombre()
         {
-            return nombre;
+            return Nombre;
         }
 
         public void setNombre(string nom)
         {
-            nombre = nom;
+            Nombre = nom;
         }
     }
 }

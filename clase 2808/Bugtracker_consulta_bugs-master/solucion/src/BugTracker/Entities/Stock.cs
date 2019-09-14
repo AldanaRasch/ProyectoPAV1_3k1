@@ -8,9 +8,9 @@ namespace BugTracker.Entities
 {
     class Stock
     {
-        private int codProducto;
-        private int cantActual;
-        private int cantMin;
+        public int CodProducto { get; internal set; }
+        public int CantActual { get; internal set; }
+        public int CantMin { get; internal set; }
 
         public Stock()
         {
@@ -18,25 +18,25 @@ namespace BugTracker.Entities
 
         public Stock(int codProducto, int cantActual, int cantMin)
         {
-            this.codProducto = codProducto;
-            this.cantActual = cantActual;
-            this.cantMin = cantMin;
+            this.CodProducto = codProducto;
+            this.CantActual = cantActual;
+            this.CantMin = cantMin;
         }
 
 
         public int cantidadDelProducto()
         {
-            return cantActual;
+            return CantActual;
         }
 
         public int getCodProducto()
         {
-            return codProducto;
+            return CodProducto;
         }
 
         public int getCantMin()
         {
-            return cantMin;
+            return CantMin;
         }
     }
 }

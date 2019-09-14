@@ -8,56 +8,57 @@ namespace BugTracker.Entities
 {
     class Producto
     {
-        private int idProducto;
-        private string nombre;
-        private Categoria categoria;
-        private float precioVenta;
+
+        public int IdProducto { get; set; }
+        public string Nombre { get; set; }
+        public int IdCategoria { get; set; }
+        public decimal PrecioVenta { get; set; }
 
         public Producto()
         {
         }
 
-        public Producto(int idProducto, string nombre, Categoria categoria, float precioVenta)
+        public Producto(int idProducto, string nombre, int categoria, decimal precioVenta)
         {
-            this.idProducto = idProducto;
-            this.nombre = nombre;
-            this.categoria = categoria;
-            this.precioVenta = precioVenta;
+            this.IdProducto = idProducto;
+            this.Nombre = nombre;
+            this.IdCategoria = categoria;
+            this.PrecioVenta = precioVenta;
         }
 
         public int getIdProducto()
         {
-            return idProducto;
+            return IdProducto;
         }
 
         public string getNombre()
         {
-            return nombre;
+            return Nombre;
         }
 
-        public Categoria getCategoria()
+        public int getCategoria()
         {
-            return categoria;
+            return IdCategoria;
         }
 
-        public float getPrecioVenta()
+        public decimal getPrecioVenta()
         {
-            return precioVenta;
+            return PrecioVenta;
         }
 
         public void setNombre(string nom)
         {
-            nombre= nom;
+            Nombre= nom;
         }
 
-        public void setCategoria(Categoria cat)
+        public void setCategoria(int cat)
         {
-            categoria = cat;
+            IdCategoria = cat;
         }
 
-        public void setPrecioVenta(float precio)
+        public void setPrecioVenta(decimal precio)
         {
-            precioVenta = precio;
+            PrecioVenta = precio;
         }
     }
 }
