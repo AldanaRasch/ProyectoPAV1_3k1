@@ -21,7 +21,7 @@ namespace BugTracker.DataAccessLayer
         {
             List<Usuario> listadoBugs = new List<Usuario>();
 
-            var strSql = "SELECT id_usuario, id_perfil, usuario, password, email, estado WHERE borrado=0";
+            var strSql = "SELECT id_usuario, id_perfil, usuario, password, email, estado FROM Usuarios WHERE borrado=0";
 
             var resultadoConsulta = DBHelper.GetDBHelper().ConsultaSQL(strSql);
 

@@ -1,5 +1,5 @@
 ﻿using BugTracker.Controllers;
-using BugTracker.Models;
+using BugTracker.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

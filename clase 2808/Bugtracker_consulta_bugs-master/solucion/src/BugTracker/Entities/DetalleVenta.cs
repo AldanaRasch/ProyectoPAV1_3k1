@@ -12,7 +12,7 @@ namespace BugTracker.Entities
         public int CodDetalle { get; set; }
         public int CodProducto { get; set; }
         public int Cantidad { get; set; }
-        public int Precio { get; set; }
+        public float Precio { get; set; }
 
         public override string ToString()
         {

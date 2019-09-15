@@ -21,7 +21,7 @@ namespace BugTracker.DataAccessLayer
         {
             List<DetalleCompra> listadoBugs = new List<DetalleCompra>();
 
-            var strSQL = "SELECT codDetalle, idCompra, codProducto, cantidad, precio WHERE borrado=0";
+            var strSQL = "SELECT codDetalle, idCompra, codProducto, cantidad, precio FROM DetalleCompra WHERE borrado=0";
 
             var resultadoConsulta = DBHelper.GetDBHelper().ConsultaSQL(strSQL);
 
