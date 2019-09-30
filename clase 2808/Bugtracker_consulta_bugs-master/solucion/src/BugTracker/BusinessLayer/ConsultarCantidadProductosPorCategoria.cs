@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BugTracker.Controllers
+namespace BugTracker.BusinessLayer
 {
     class ConsultarCantidadProductosPorCategoria
     {
@@ -29,13 +29,14 @@ namespace BugTracker.Controllers
                 int idProd = int.Parse(row["id_producto"].ToString());
                 string nomProd = row["nombre"].ToString();
                 int id_categ_prod = int.Parse(row["id_categoria"].ToString());
-                float precioVenta = float.Parse(row["precioVenta"].ToString());
+                decimal precioVenta = decimal.Parse(row["precioVenta"].ToString());
 
                 ConsultarCategoriasController ccc = new ConsultarCategoriasController();
 
-                Categoria categoria = ccc.obtenerCategoria(id_categ_prod);
+                CategoriaService categoria = ccc.obtenerCategoria(id_categ_prod);
+                int idCate = categoria.getIdCategoria();
 
-                Producto nuevoProd = new Producto(idProd, nomProd, categoria, precioVenta);
+                Producto nuevoProd = new Producto(idProd, nomProd, idCate, precioVenta);
                 productos.Add(nuevoProd);
             }
 

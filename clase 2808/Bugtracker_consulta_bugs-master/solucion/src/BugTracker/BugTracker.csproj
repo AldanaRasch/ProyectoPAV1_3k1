@@ -47,11 +47,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\ConsultarCantidadProductosPorCategoria.cs" />
-    <Compile Include="Controllers\ConsultarCategoriasController.cs" />
-    <Compile Include="Controllers\ConsultarProductosConStockCritico.cs" />
-    <Compile Include="Controllers\ConsultarProductosController.cs" />
-    <Compile Include="Controllers\ConsultarStockController.cs" />
+    <Compile Include="BusinessLayer\CategoriaService.cs" />
+    <Compile Include="BusinessLayer\CompraService.cs" />
+    <Compile Include="BusinessLayer\DetalleCompraService.cs" />
+    <Compile Include="BusinessLayer\DetalleVentaService.cs" />
+    <Compile Include="BusinessLayer\EmpleadoService.cs" />
+    <Compile Include="BusinessLayer\EstadoService.cs" />
+    <Compile Include="BusinessLayer\PerfilService.cs" />
+    <Compile Include="BusinessLayer\ProductoService.cs" />
+    <Compile Include="BusinessLayer\ConsultarCantidadProductosPorCategoria.cs" />
+    <Compile Include="BusinessLayer\ConsultarCategoriasController.cs" />
+    <Compile Include="BusinessLayer\ConsultarProductosConStockCritico.cs" />
+    <Compile Include="BusinessLayer\ConsultarProductosController.cs" />
+    <Compile Include="BusinessLayer\ConsultarStockController.cs" />
+    <Compile Include="BusinessLayer\ProveedorService.cs" />
+    <Compile Include="BusinessLayer\StockService.cs" />
+    <Compile Include="BusinessLayer\UsuarioService.cs" />
+    <Compile Include="BusinessLayer\VentaService.cs" />
     <Compile Include="DataAccessLayer\BugDao.cs" />
     <Compile Include="DataAccessLayer\BugHistoricoDao.cs" />
     <Compile Include="DataAccessLayer\CategoriaDao.cs" />
@@ -60,6 +72,7 @@
     <Compile Include="DataAccessLayer\DetalleVentaDao.cs" />
     <Compile Include="DataAccessLayer\EmpleadoDao.cs" />
     <Compile Include="DataAccessLayer\EstadoDao.cs" />
+    <Compile Include="DataAccessLayer\PerfilDao.cs" />
     <Compile Include="DataAccessLayer\ProductoDao.cs" />
     <Compile Include="DataAccessLayer\ProveedorDao.cs" />
     <Compile Include="DataAccessLayer\StockDao.cs" />

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BugTracker.Controllers
+namespace BugTracker.BusinessLayer
 {
     class ConsultarProductosController
     {
@@ -24,7 +24,7 @@ namespace BugTracker.Controllers
                 Producto prod = new Producto();
                 int idProd = int.Parse(row["id_producto"].ToString());
                 string nombre = row["nombre"].ToString();
-                Categoria categoria = ccc.obtenerCategoria(int.Parse(row["id_categoria"].ToString()));
+                CategoriaService categoria = ccc.obtenerCategoria(int.Parse(row["id_categoria"].ToString()));
                 float precioVta = float.Parse(row["precioVenta"].ToString());
                 productos.Add(prod);
 

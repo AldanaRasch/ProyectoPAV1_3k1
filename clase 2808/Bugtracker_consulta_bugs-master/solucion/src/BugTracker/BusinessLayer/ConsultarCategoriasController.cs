@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BugTracker.Controllers
+namespace BugTracker.BusinessLayer
 {
     class ConsultarCategoriasController
     {
-        List<Categoria> categorias = new List<Categoria>();
+        List<CategoriaService> categorias = new List<CategoriaService>();
         DBHelper dbContext = DBHelper.GetDBHelper();
 
         public ConsultarCategoriasController()
@@ -22,19 +22,19 @@ namespace BugTracker.Controllers
                 int idCateg = int.Parse(row["id_categoria"].ToString());
                 string nombre = row["nombre"].ToString();
 
-                Categoria prod = new Categoria(idCateg, nombre);
+                CategoriaService prod = new CategoriaService(idCateg, nombre);
                 categorias.Add(prod);
             }
 
         }
 
-        public Categoria obtenerCategoria(int index)
+        public CategoriaService obtenerCategoria(int index)
         {
-            Categoria cat = categorias.ElementAt(index - 1);
+            CategoriaService cat = categorias.ElementAt(index - 1);
             return cat;
         }
 
-        public List<Categoria> obtenerListCategorias()
+        public List<CategoriaService> obtenerListCategorias()
         {
             return categorias;
         }
